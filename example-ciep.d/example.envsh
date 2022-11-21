@@ -1,0 +1,3 @@
+#!/bin/sh
+log export TESTENV=gotcha_example.envsh
+export TESTENV=gotcha_example.envsh

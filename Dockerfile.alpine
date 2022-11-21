@@ -1,0 +1,14 @@
+ARG BASE_IMAGE=alpine:latest
+
+FROM ${BASE_IMAGE}
+SHELL [ "/bin/sh", "-ec" ]
+
+COPY /ciep.d/ /ciep.d/
+COPY /ciep.sh /
+
+RUN apk --no-cache --update add dumb-init su-exec ; \
+    install -d /ciep.user
+
+VOLUME /ciep.user
+
+ENTRYPOINT [ "/ciep.sh" ]
