@@ -198,7 +198,7 @@ while read -r f ; do
 			log "running $f"
 
 			__CIEP_SOURCE="$f" \
-			"$f"
+			"$f" "$@"
 		else
 			log "skipping $f - not executable"
 		fi

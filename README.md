@@ -153,6 +153,7 @@ Shell scripts:
 
 Non-shell scripts/binaries (only recommendations):
 
+- handle (as necessary) command line arguments that were initially provided to `/ciep.sh`;
 - prefix output messages with `"${__CIEP_SOURCE}: "`;
 - output messages to `stderr`.
 
