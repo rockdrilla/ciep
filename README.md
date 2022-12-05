@@ -147,6 +147,8 @@ Shell scripts:
   . /ciep.sh
   ```
 
+- `*.envsh` scripts: avoid changing `CIEP_*` variables unless really required;
+- `*.envsh` scripts: **STRONGLY** avoid changing `__CIEP_*` variables;
 - use shell function `log()` to output regular messages;
 - use shell function `log_verbose()` to output messages to catch user attention;
 - use shell function `have_cmd()` to check "binary" (file with executable bit set) availability;
