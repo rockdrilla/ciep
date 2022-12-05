@@ -55,10 +55,6 @@ fetch https://dl-cdn.alpinelinux.org/alpine/v3.16/community/x86_64/APKINDEX.tar.
 Executing busybox-1.35.0-r17.trigger
 OK: 6 MiB in 16 packages
 
-# /ciep.sh: sourcing /ciep.d/example.envsh
-# /ciep.d/example.envsh: export TESTENV=gotcha_example.envsh
-# /ciep.sh: running /ciep.d/example.sh
-# /ciep.d/example.sh: export TESTENV=gotcha_example.sh
 uid=123(ntp) gid=1234 groups=1234
 
 PID   USER     TIME  COMMAND
@@ -112,7 +108,7 @@ PWD=/
     if `"init_binary"` isn't found - don't handle PID1.
 
 - `CIEP_RUNAS` - user/group switching (before running actual command):
-  - (*empty*) - don't switch user/group;
+  - (*empty*) (default) - don't switch user/group;
   - `user` - try switch user to "`user`" using `su-exec`;
 
     if `su-exec` isn't found - don't switch;
