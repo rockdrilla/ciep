@@ -33,7 +33,11 @@ __CIEP_SOURCE="$0"
 
 ## PID1 handling
 ## "CIEP_INIT={no|false|0|pid1_prog[ args]}"
-: "${CIEP_INIT:=dumb-init}"
+if [ "$$" = 1 ] ; then
+	: "${CIEP_INIT:=dumb-init}"
+else
+	: "${CIEP_INIT:=no}"
+fi
 case "${CIEP_INIT}" in
 0 | [Nn][Oo] | [Ff][Aa][Ll][Ss][Ee])
 	unset CIEP_INIT CIEP_INIT_ARGS

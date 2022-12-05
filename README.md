@@ -102,8 +102,9 @@ PWD=/
   ```
 
 - `CIEP_INIT` - PID1 handling:
+  - (*empty*) (default) - defaults to `"dumb-init"` if `ciep.sh` is running as pid 1 (i.e. starting container);
+                          otherwise defaults to `"no"`;
   - `no`, `false` or `0` - don't handle PID1;
-  - (*empty*) - same as `"dumb-init"`;
   - `"init_cmd"` - try handling PID1 with `"init_cmd"`:
 
     `"init_cmd"` is being split value by spaces, 1st value is used as `"init_binary"` name and rest values are used as arguments (if any);
