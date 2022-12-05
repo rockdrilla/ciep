@@ -25,6 +25,10 @@ if [ -z "${__CIEP_SOURCE}" ] ; then
 
 set -f
 
+if [ "$1" = env ] ; then
+	export CIEP_ENV=1
+fi
+
 __CIEP_SOURCE="$0"
 
 ## PID1 handling
@@ -195,6 +199,11 @@ while read -r f ; do
 	;;
 	*)
 		if [ -x "$f" ] ; then
+			if [ -n "${CIEP_ENV}" ] ; then
+				log "skipping $f - running 'env only' mode"
+				continue
+			fi
+
 			log "running $f"
 
 			__CIEP_SOURCE="$f" \

@@ -89,6 +89,18 @@ PWD=/
   - (*empty*) (default) - print only "verbose" messages;
   - (*any non-empty value*) - print regular messages along with "verbose" messages;
 
+- `CIEP_ENV` - "env only" mode:
+  - (*empty*) (default) - run as usual;
+  - (*any non-empty value*) - run only `*.envsh` scripts;
+
+  NB: if first command line argument is `env` then "env only" mode is **enforced**.
+
+  This mode may be useful in cases like "attaching to existing container" to achieve same environment, e.g.:
+
+  ```sh
+  docker exec -it my_container /ciep.sh env <command>
+  ```
+
 - `CIEP_INIT` - PID1 handling:
   - `no`, `false` or `0` - don't handle PID1;
   - (*empty*) - same as `"dumb-init"`;
