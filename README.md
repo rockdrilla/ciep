@@ -4,6 +4,8 @@
 
 `ciep` is approach to be extensible and customizable "`docker-entrypoint.sh`" variant/replacement.
 
+It was inspired by many projects, most notable is [nginxinc/docker-nginx](https://github.com/nginxinc/docker-nginx).
+
 If you have problems with it then feel free to open the issue/PR. :)
 
 *NB: work in progress.*
