@@ -2,14 +2,15 @@
 
 ## common shell functions: begin
 
-if [ -z "${CIEP_QUIET}" ] ; then
-	log() {
-		if [ $# = 0 ] ; then
-			echo "# ${__CIEP_SOURCE}: $(date +'%Y-%m-%d %H:%M:%S %z')"
-		else
-			echo "# ${__CIEP_SOURCE}: $*"
-		fi 1>&2
-	}
+log_verbose() {
+	if [ $# = 0 ] ; then
+		echo "# ${__CIEP_SOURCE}: $(date +'%Y-%m-%d %H:%M:%S %z')"
+	else
+		echo "# ${__CIEP_SOURCE}: $*"
+	fi 1>&2
+}
+if [ -n "${CIEP_VERBOSE}" ] ; then
+	log() { log_verbose "$@" ; }
 else
 	log() { : ;}
 fi

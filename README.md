@@ -85,8 +85,9 @@ PWD=/
 
 ### Environment:
 
-- `CIEP_QUIET` - messages from `ciep`:
-  - (*any non-empty value*) - don't print messages
+- `CIEP_VERBOSE` - messages from `ciep`:
+  - (*empty*) (default) - print only "verbose" messages;
+  - (*any non-empty value*) - print regular messages along with "verbose" messages;
 
 - `CIEP_INIT` - PID1 handling:
   - `no`, `false` or `0` - don't handle PID1;
@@ -146,7 +147,8 @@ Shell scripts:
   . /ciep.sh
   ```
 
-- use shell function `log()` to output messages;
+- use shell function `log()` to output regular messages;
+- use shell function `log_verbose()` to output messages to catch user attention;
 - use shell function `have_cmd()` to check "binary" (file with executable bit set) availability;
 
 Non-shell scripts/binaries (only recommendations):
